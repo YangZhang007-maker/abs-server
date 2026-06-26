@@ -29,8 +29,8 @@ function handleLogout() {
         <span class="user-info" style="cursor: pointer" @click="router.push('/profile')">
           <UserOutlined />
           {{ authStore.user?.name }}
-          <a-tag :color="authStore.isRoot ? 'red' : authStore.isProductOwner ? 'blue' : 'green'" style="margin-left: 4px">
-            {{ authStore.isRoot ? '总负责人' : authStore.isProductOwner ? '产品负责人' : '销售人员' }}
+          <a-tag :color="authStore.isRoot ? 'red' : authStore.isRoot2 ? 'orange' : authStore.isProductOwner ? 'blue' : 'green'" style="margin-left: 4px">
+            {{ authStore.isRoot ? '总负责人' : authStore.isRoot2 ? '存续期负责人' : authStore.isProductOwner ? '产品负责人' : '销售人员' }}
           </a-tag>
         </span>
         <a-button type="text" @click="handleLogout">
