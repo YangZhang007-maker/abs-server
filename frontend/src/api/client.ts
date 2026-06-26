@@ -3,7 +3,7 @@ import { notification } from 'ant-design-vue';
 
 // 生产环境使用 Render 后端地址，本地开发使用 Vite proxy
 const BASE_URL = import.meta.env.PROD
-  ? 'https://你的Render后端地址.onrender.com/api/v1'
+  ? 'https://abs-server.onrender.com/api/v1'
   : '/api/v1';
 
 const http = axios.create({
