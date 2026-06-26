@@ -13,5 +13,11 @@ export default registerAs(
     entities: [__dirname + '/../**/*.entity{.ts,.js}'],
     synchronize: true,
     logging: false,
+    extra: {
+      ssl: {
+        rejectUnauthorized: false,
+      },
+      family: 4,  // 强制 IPv4，避免 Render 环境 IPv6 不可达
+    },
   }),
 );
