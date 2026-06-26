@@ -1,0 +1,21 @@
+# Render 部署配置
+services:
+  - type: web
+    name: abs-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install --legacy-peer-deps && npm run build
+    startCommand: node dist/main.js
+    envVars:
+      - key: APP_PORT
+        value: 10000
+      - key: DB_HOST
+        value: aws-0-us-west-1.pooler.supabase.com
+      - key: DB_PORT
+        value: 6543
+      - key: DB_USERNAME
+        value: postgres.buklmnpbbkfrkdvmvupr
+      - key: DB_DATABASE
+        value: postgres
+      - key: NODE_ENV
+        value: production
