@@ -31,7 +31,8 @@ async function bootstrap() {
   app.useGlobalInterceptors(new TransformInterceptor());
   app.useGlobalFilters(new HttpExceptionFilter());
 
-  const port = process.env.APP_PORT || 3001;
+  // Render 使用 PORT 环境变量，本地使用 APP_PORT 或 3001
+  const port = parseInt(process.env.PORT || process.env.APP_PORT || '3001', 10);
   await app.listen(port);
   console.log('ABS Backend running on http://localhost:' + port);
 }
